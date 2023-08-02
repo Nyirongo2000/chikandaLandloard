@@ -12,7 +12,7 @@ function Navbar() {
       <div className="leftSide">
         {/* if showlinks =true then set id to hidden else empty id */}
         <div className="links" id={showLinks ? "hidden" : ""}>
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
           <a href="/book">Book</a>
           <a href="/about">about us</a>
           <a href="/contact">Contact Us</a>
@@ -22,8 +22,9 @@ function Navbar() {
       </div>
       <div className="rightSide">
         <input type="text" placeholder="search..."/>
-        <button>SearchIcon</button>
+        <button>Search</button>
       </div>
+     
     </div>
   );
 }

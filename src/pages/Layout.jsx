@@ -1,10 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Home from "./Home";
+import Intro from "../components/Intro";
+import DamyData from "../components/DamyData";
+
 const Layout = () => {
   return (
     <>
-      <Home/>
+      <Intro />
+      <DamyData/>
       <Outlet />
     </>
   );
