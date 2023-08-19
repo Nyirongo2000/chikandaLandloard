@@ -1,4 +1,9 @@
 #fullly{
-    height: 50px;
-    background-color: rgb(139, 213, 156);
+    background-image: url(/src/resources/relaxedLady.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
 }

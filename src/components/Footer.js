@@ -2,10 +2,11 @@ import FacebookIcon from "../resources/icons8_facebook_64px.png"
 import TwiterIcon from "../resources/icons8_twitter_64px.png"
 import InstaIcon from "../resources/icons8_instagram_64px_1.png"
 import React from "react"
+import "./Footer.css"
 const Footer = () => {
     return (
       <>
-         <div className="flex flex-row flex-wrap justify-between w-full h-full p-4 bg-gray-900">        
+         <div id="footerq" className="flex flex-row flex-wrap justify-between w-full h-full p-4 ">        
             {/* first */}
             <div className="p-2 m-1 ml-1 ">
               <p className="text-4xl text-white">Download info lorem links </p>
@@ -39,7 +40,7 @@ const Footer = () => {
           </div> 
           <div className="text-sm text-center text-white bg-gray-900 h-fill">
             <hr className="mx-24"/>
-           <p  >A website by... 2023 ©</p>
+           <p>A website by 0882748301...2023 ©</p>
           </div>         
       </>    
     )

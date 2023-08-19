@@ -1,4 +1,6 @@
-
+.spacef{
+    height: 80px ;
+}
 .App {
   width : 100vm ;
   height : 100vh ;
@@ -6,34 +8,35 @@
 button:hover{
   cursor: pointer;
 }
-body{
-  margin : 0 ;
-  padding : 0 ;
-}
+
 .Navbar{
-  background-color: #021E39;
+  position: fixed;
+  background-color: #c0bff7;
   width: 100%;
   height: 80px ;
   font-family: Arial, Helvetica, sans-serif ;
   display: flex ;
+ 
 }
 .Navbar .leftSide{
   display: flex ;
   justify-content: left ;
   align-items: center ;
   flex: 50% ;
+  
 }
 .Navbar .leftSide .links{
   max-height: 80px;
+  
 }
 
 .Navbar .leftSide button{
-  display: none;
+  display: none !important;
   margin-left:15px;
 }
 /* important */
 .Navbar .leftSide #hidden{
- display: flex;
+ display: flex !important;
 }
 
 .Navbar .leftSide .links a{
@@ -74,22 +77,22 @@ body{
 }
 @media only screen and (max-width:650PX){
   .Navbar .leftSide button{
-    display: flex;
+    display: flex !important;
   }
    .Navbar .leftSide .links{
-    display: none;
+    display: none !important;
   }
   .Navbar .leftSide #hidden{
-    position: absolute;
-    left: 0px;
-    top:80px;
-    height: auto;
-    max-height: 200px;
-    width: 100%;
-    background-color: #021E39;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute !important;
+    left: 0px !important;
+    top:80px !important;
+    height: auto !important;
+    max-height: 400px !important;
+    width: 100% !important;
+    background-color: #c0bff7;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .Navbar .leftSide #hidden a{
