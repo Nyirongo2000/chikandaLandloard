@@ -10,9 +10,9 @@ const DamyData = () => {
     <div>
       <div id="makeFull">
         <div class="gallery">
-          <a target="_blank" href="img_mountains.jpg">
+          
             <img src={Hostel} alt="Developer1" />
-          </a>
+         
           <div className="text-red-400">
             <div>
               <p>Gender:</p>
@@ -22,7 +22,7 @@ const DamyData = () => {
             </div>
             <button>info </button>
             <button
-              className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
               onClick={() => setButtonPopup(true)}
             >
               more info
@@ -34,9 +34,9 @@ const DamyData = () => {
           </div>
         </div>
         <div class="gallery">
-          <a target="_blank" href="img_mountains.jpg">
+        
             <img src={Hostel} alt="Developer1" />
-          </a>
+         
           <div className="text-red-400">
             <div>
               <p>Gender:</p>
@@ -46,7 +46,29 @@ const DamyData = () => {
             </div>
             <button>info </button>
             <button
-              className="close-modal"
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
+              onClick={() => setButtonPopup(true)}
+            >
+              more info
+            </button>
+            <PopUpDetails
+              trigger={buttonPopup}
+              setTrigger={setButtonPopup}
+            ></PopUpDetails>
+          </div>
+        </div>
+        <div class="gallery">       
+            <img src={Hostel} alt="Developer1" />  
+          <div className="text-red-400">
+            <div>
+              <p>Gender:</p>
+              <p>double rooms:5</p>
+              <p>minutes:5</p>
+              <p>minutes:5</p>
+            </div>
+            <button>info </button>
+            <button
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
               onClick={() => setButtonPopup(true)}
             >
               more info
@@ -58,9 +80,9 @@ const DamyData = () => {
           </div>
         </div>
         <div class="gallery">
-          <a target="_blank" href="img_mountains.jpg">
+         
             <img src={Hostel} alt="Developer1" />
-          </a>
+          
           <div className="text-red-400">
             <div>
               <p>Gender:</p>
@@ -70,31 +92,7 @@ const DamyData = () => {
             </div>
             <button>info </button>
             <button
-              className="close-modal"
-              onClick={() => setButtonPopup(true)}
-            >
-              more info
-            </button>
-            <PopUpDetails
-              trigger={buttonPopup}
-              setTrigger={setButtonPopup}
-            ></PopUpDetails>
-          </div>
-        </div>
-        <div class="gallery">
-          <a target="_blank" href="img_mountains.jpg">
-            <img src={Hostel} alt="Developer1" />
-          </a>
-          <div className="text-red-400">
-            <div>
-              <p>Gender:</p>
-              <p>double rooms:5</p>
-              <p>minutes:5</p>
-              <p>minutes:5</p>
-            </div>
-            <button>info </button>
-            <button
-              className="close-modal"
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
               onClick={() => setButtonPopup(true)}
             >
               more info
@@ -131,7 +129,7 @@ const DamyData = () => {
                     </div>
                   </div>
                   <div className="flex flex-row flex-wrap">
-                    <button className="text-sm text-white bg-blue-600 hover:bg-blue-900 p-0.5 m-0.5 rounded-md">
+                    <button className="text-sm text-white bg-blue-300 hover:bg-blue-900 p-0.5 m-0.5 rounded-md">
                       Copy
                     </button>
                     <button className="text-sm text-white bg-blue-400 hover:bg-blue-600 p-0.5 m-0.5 rounded-md">
