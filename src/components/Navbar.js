@@ -9,7 +9,7 @@ function Navbar() {
         {/* if showlinks =true then set id to hidden else empty id */}
         <div className="links" id={showLinks ? "hidden" : ""}>
           <a href="/">Home</a>
-          <a href="/book">Hostels</a>
+          <a href="/hostel">Hostel</a>
           <a href="/about">About us</a>
           <a href="/blog">Blog</a>
           <a href="/contact">Contact Us</a>

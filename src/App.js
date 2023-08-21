@@ -20,7 +20,7 @@ function App() {
           {" "}
         </Route>
         <Route path="about" element={<AboutUs />} />
-        <Route path="hostels" element={<Hostels />} />
+        <Route path="/hostel" element={<Hostels />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
 

@@ -1,5 +1,10 @@
 # Getting Started with Create React App
 
+
+webflow:
+hostel catalog > popup (displays moer information about the house)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -7,3 +7,10 @@
     background-size: cover;
   
 }
+#inputBtn{
+    border-radius:20px;
+    width: 400px;
+}
+#btn{
+    width: 95px;
+}
