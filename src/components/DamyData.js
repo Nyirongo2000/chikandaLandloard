@@ -14,78 +14,11 @@ const DamyData = () => {
 
           <div className="text-black-400">
             <div>
-              <p>Gender:</p>
+              <h2 className="font-bold">Hostel Name</h2>
+              <p>minutes:5</p>
               <p>double rooms:5</p>
-              <p>minutes:5</p>
-              <p>minutes:5</p>
-            </div>
-            <button>info </button>
-            <button
-              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
-              onClick={() => setButtonPopup(true)}
-            >
-              more info
-            </button>
-            <PopUpDetails
-              trigger={buttonPopup}
-              setTrigger={setButtonPopup}
-            ></PopUpDetails>
-          </div>
-        </div>
-        <div class="gallery">
-          <img src={Hostel} alt="Developer1" />
-
-          <div className="text-black-400">
-            <div>
               <p>Gender:</p>
-              <p>double rooms:5</p>
-              <p>minutes:5</p>
-              <p>minutes:5</p>
-            </div>
-            <button>info </button>
-            <button
-              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
-              onClick={() => setButtonPopup(true)}
-            >
-              more info
-            </button>
-            <PopUpDetails
-              trigger={buttonPopup}
-              setTrigger={setButtonPopup}
-            ></PopUpDetails>
-          </div>
-        </div>
-        <div class="gallery">
-          <img src={Hostel} alt="Developer1" />
-          <div className="text-black-400">
-            <div>
-              <p>Gender:</p>
-              <p>double rooms:5</p>
-              <p>minutes:5</p>
-              <p>minutes:5</p>
-            </div>
-            <button>info </button>
-            <button
-              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
-              onClick={() => setButtonPopup(true)}
-            >
-              more info
-            </button>
-            <PopUpDetails
-              trigger={buttonPopup}
-              setTrigger={setButtonPopup}
-            ></PopUpDetails>
-          </div>
-        </div>
-        <div class="gallery">
-          <img src={Hostel} alt="Developer1" />
-
-          <div className="text-black-400">
-            <div>
-              <p>Gender:</p>
-              <p>double rooms:5</p>
-              <p>minutes:5</p>
-              <p>minutes:5</p>
+              <p>room.rCondition</p>
             </div>
             <button>info </button>
             <button
@@ -100,7 +33,7 @@ const DamyData = () => {
                   <img
                     className="h-full bg-cover hover:rounded-md"
                     src={smile}
-                    alt="magazine"
+                    alt="hostel details"
                   />
                 </div>
                 <div
@@ -111,17 +44,25 @@ const DamyData = () => {
                     <h1 className="text-blue-900">Name of hostel</h1>
                   </div>
                   <div className="bg-white h-fill">
-                    <p className="text-sm text-gray-600">
-                      Lorem ipsum meta-deta everything is posible
-                    </p>
+                    <p className="text-sm text-gray-600">Description</p>
                     <div className="flex h-full my-1 bg-white flex-rol">
-                      <p className="ml-1 text-sm text-gray-600">6 rooms-</p>
                       <p className="ml-1 text-sm text-gray-600">
-                        tags: single ,doube
+                        rooms.rooms-Number(total)
                       </p>
-                      <p className="ml-1 text-sm text-gray-600">10 minutes</p>
                       <p className="ml-1 text-sm text-gray-600">
-                        phone #:0882748301{" "}
+                        <h2>location. name</h2>
+                      </p>        
+                      <p className="ml-1 text-sm text-gray-600">
+                        landlord.description
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        HOstel.timeItTakes
+                      </p>
+                      <p className="ml-1  text-sm bg-slate-200 text-gray-600">
+                        landlord.phone{" "}
+                        <button className="text-sm text-white bg-blue-200 hover:bg-blue-400 p-0.5 m-0.5 rounded-md">
+                          Copy
+                        </button>
                       </p>
                     </div>
                   </div>
