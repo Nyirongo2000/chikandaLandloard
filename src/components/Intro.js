@@ -1,5 +1,6 @@
 import React from "react";
 import "./intro.css";
+import { Button } from "@material-tailwind/react";
 function Intro() {
   return (
     <div>
@@ -10,24 +11,24 @@ function Intro() {
         <div className="flex flex-col items-center h-auto mt-12">
           <div className="text-md h-9"> Hello World</div>
           <div className="flex flex-row justify-center flex-auto">
-            <button
+            <Button
               id="btn"
               className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
             >
               <a href="/hostel">Hostel</a>
-            </button>
-            <button
+            </Button>
+            <Button
               id="btn"
               className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
             >
               Agents
-            </button>
-            <button
+            </Button>
+            <Button
               id="btn"
               className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
             >
               On campus
-            </button>
+            </Button>
           </div>
           <div>
             <input
