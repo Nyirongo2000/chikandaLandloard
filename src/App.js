@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import AddAHostel from "./pages/AddAHostel";
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
         <Route path="/hostel" element={<Hostels />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/addAHostel" element={<AddAHostel/>} />
 
         {/* <Route path="blog" element={<Blog/>}/> */}
         {/* <Route path="magazineupload" element={<MagazineUpload/>}/> */}
