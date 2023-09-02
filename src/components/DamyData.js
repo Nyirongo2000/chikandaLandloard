@@ -35,17 +35,11 @@ const DamyData = () => {
   return (
     <div>
       <div id="makeFull">
-        {!loading && (
-          <div>{hostels.map((hostell)=>(
-            <Hostel hostel={hostell}
-            key={hostell.id}>
-
-           </Hostel>
-          ))
-       
-          }
+        
+          <div>
+            <Hostel/>     
           </div>
-        )}
+     
       </div>
       <hr />
 

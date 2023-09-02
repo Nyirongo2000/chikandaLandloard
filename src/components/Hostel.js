@@ -4,20 +4,12 @@ import Hostelpic from "../resources/hostel.jpg";
 import smile from "../resources/relaxedLady.jpg";
 import PopUpDetails from "./PopUpDetails";
 import { useState } from "react";
-import LandlordService from "../services/LandlordService";
 import { useNavigate } from "react-router-dom";
-import { useLayoutEffect } from "react";
+
 
 const Hostel = () => {
   // creating a state
-  const [hostel, setHostel] = useState({
-    id: "",
-    hostel_name: "",
-    gender: "",
-    timeTaken: "",
-    description: "",
 
-  });
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
   return (
@@ -25,12 +17,12 @@ const Hostel = () => {
       <div class="gallery">
         <img src={Hostelpic} alt="Developer1" />
 
-        <div className="text-black-400">
+        <div className="text-black-400 ">
           <div>
             <h2 className="font-bold">Hostel Name</h2>
-            <p>minutes:{hostel.timeTaken}</p>
+            <p>minutes:.timeTake</p>
             <p>double rooms:5</p>
-            <p>Gender: {hostel.gender}</p>
+            <p>Gender: hostel.gender</p>
             <p>room.rCondition</p>
           </div>
           <button>info </button>
