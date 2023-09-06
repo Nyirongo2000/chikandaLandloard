@@ -28,8 +28,8 @@ div.gallery {
   margin: 5px;
   /* border: 1px solid #ccc; */
   float: left;
-  width: 280px;
-  height: auto;
+  width: 230px;
+  max-height:350px;
  
 }
 .inBetween {

@@ -4,6 +4,7 @@
 .App {
   width : 100vm ;
   height : 100vh ;
+  margin:0px;
 }
 button:hover{
   cursor: pointer;

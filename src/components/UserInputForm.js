@@ -8,27 +8,40 @@ import {
   Textarea,
   Radio,
 } from "@material-tailwind/react";
+
 import { useNavigate } from "react-router-dom";
+ 
 import LandlordService from "../services/LandlordService";
 function UserInputForm() {
     const [hostel, setHostel] = useState({
-          id: "",
-          hostel_name: "",
-          timeTaken: "",
-          gender: "",
-          description: "",
-         
+      id: "",
+      hostel_name: "",
+      timeTaken: "",
+      gender: "",
+      description: "",
+      rCondition: "",
+      numberOfSingleRooms: "",
+      numberOfDoubleRooms: "",
+      phoneNumber: "",
+      landlordName: "",
+      landlordDescription: "",
+      location_Name: "",
+      location_Description: "",
+      StudentEmail: "",
     });
 
     const handleChange =(e) =>{
       const value = e.target.value;
       setHostel({ ...hostel, [e.target.name]: value });
     }
+    const navigate=useNavigate();
     const saveHostel=(e)=>{
       e.preventDefault();
       LandlordService.saveHostel(hostel)
       .then((Response)=> {
-        console.log(Response)
+        console.log(Response);
+        navigate("/");
+        
       })
       .catch((Error)=>{
         console.log(Error);
@@ -42,7 +55,7 @@ function UserInputForm() {
         className="flex flex-row items-center justify-center flex-auto p-3"
       >
         <Card color="transparent" shadow={false} className="relative">
-          <Typography variant="h4" color="blue-gray" >
+          <Typography variant="h4" color="blue-gray">
             Hello Chikanda
           </Typography>
           <Typography color="gray" className="mt-1 font-normal">
@@ -58,25 +71,25 @@ function UserInputForm() {
                 onChange={(e) => handleChange(e)}
                 className="fill"
               />
-              <div className="flex flex-row gap-10 ">
+              <div className="flex flex-row gap-10">
                 <Radio
                   name="gender"
                   label="male"
-                  value={hostel.gender}
+                  value="male" // Different value for male
                   onChange={(e) => handleChange(e)}
                 />
                 <Radio
                   name="gender"
                   label="female"
-                  value={hostel.gender}
+                  value="female" // Different value for female
                   onChange={(e) => handleChange(e)}
-                  defaultChecked
+                  // defaultChecked // Only set defaultChecked on one option if needed
                 />
               </div>
               <Input
                 label="minutes from campus"
-                type="number"
                 name="timeTaken"
+                type="number"
                 min="1"
                 max="60"
                 value={hostel.timeTaken}
@@ -96,19 +109,18 @@ function UserInputForm() {
               Rooms.
             </Typography>
             <div className="flex items-center gap-4 my-4 ">
-              <select class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                <option selected>single room</option>
-                <option>Double</option>
-                <option>triple</option>
-              </select>
-              <select class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
-                <option selected>Room condition</option>
-                <option>Good</option>
-                <option>not bad</option>
-                <option>Great</option>
-              </select>
+              <Input
+               
+                label="# of single rooms "
+                class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+              ></Input>
+              <Input
+                label="# of double rooms "
+                class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+              ></Input>
             </div>
             <hr />
+            {/* location */}
             <Typography color="gray" className="mt-1 font-normal">
               Location
             </Typography>
@@ -116,16 +128,16 @@ function UserInputForm() {
               size="sm"
               label="Name"
               className="fill "
-              name="locationName"
-              // value={landlord.landlordName}
+              name="location_Name"
+              value={hostel.location_Name}
               onChange={(e) => handleChange(e)}
             />
             <br />
             <Textarea
               label="Description"
               placeholder="word limit"
-              name="description"
-              value={hostel.description}
+              name="location_Description"
+              value={hostel.location_Description}
               onChange={(e) => handleChange(e)}
             />
             <hr />
@@ -137,22 +149,22 @@ function UserInputForm() {
               label="Landlord Name"
               className="fill"
               name="landlordName"
-              value={hostel.gender}
+              value={hostel.landlordName}
               onChange={(e) => handleChange(e)}
             />
             <br />
             <Input
               size="sm"
-              label="Phone number ie (0882748301)"
+              label="phone # (0882748301)"
               className="fill"
-              name="phone"
-              value={hostel.id}
+              name="phoneNumber"
+              value={hostel.phoneNumber}
               onChange={(e) => handleChange(e)}
             />
             <br />
             <select
-              name="description"
-              value={hostel.description} // Make sure this matches one of the option values
+              name="landlordDescription"
+              value={hostel.landlordDescription} // Make sure this matches one of the option values
               onChange={(e) => handleChange(e)}
               className="block w-full px-4 py-3 text-sm border-gray-200 rounded-md pr-9 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
             >
@@ -179,8 +191,16 @@ function UserInputForm() {
               }
               containerProps={{ className: "-ml-2.5" }}
             />
-            <Input text="email" label="student email..." />
-            <Button className="mt-6" fullWidth onClick={saveHostel}>
+            <Input
+              type="email"
+              name="StudentEmail"
+              label="Student email "
+              pattern="^[\w\.-]+@unima\.ac\.mw$"
+              required
+              value={hostel.StudentEmail}
+              onChange={(e) => handleChange(e)}
+            ></Input>
+            <Button className="mt-6 " fullWidth onClick={saveHostel}>
               Add Hostel
             </Button>
             {/* <Typography color="gray" className="mt-4 font-normal text-center">

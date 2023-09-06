@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { FaBars } from 'react-icons/fa';
 import "../App.css";
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
@@ -18,8 +19,9 @@ function Navbar() {
         <button
           className="px-4 py-2 font-semibold text-blue-700 bg-transparent border border-blue-500 rounded hover:bg-blue-500 hover:text-white hover:border-transparent"
           onClick={() => setShowLinks(!showLinks)}
+
         >
-          open
+        <FaBars /> {/* Hamburger menu icon */}  
         </button>
       </div>
       <div className="rightSide">

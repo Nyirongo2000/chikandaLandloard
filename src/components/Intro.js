@@ -16,18 +16,19 @@ function Intro() {
         <div className="flex flex-col items-center h-auto mt-12">
           <div className="text-md h-9"> Hello World</div>
           <div className="flex flex-row justify-center flex-auto">
-            <Button
+           
+              <a href="/hostel"> <Button
               id="btn"
               className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
-            >
-              <a href="/hostel">Hostel</a>
-            </Button>
-            <Button
+            >Hostel</Button>
+            </a>
+            
+            
+              <a href="/addAHostel"><Button
               id="btn"
               className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
-            >
-              <a href="/addAHostel">Add</a>
-            </Button>
+            >add </Button></a>
+           
             <Button
               id="btn"
               className="p-1 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
@@ -36,7 +37,7 @@ function Intro() {
             </Button>
           </div>
           <div>
-            <div className="relative flex w-full max-w-[24rem] ">
+            <div className="relative block flex w-full max-w-[24rem] ">
               <Input
                 type="email"
                 value={email}
