@@ -5,8 +5,8 @@ import "../App.css";
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
   return (
-    <div className="Navbar">
-      <div className="leftSide">
+    <div id="Navbar" className="bg-indigo-500 ">
+      <div className="leftSide ">
         {/* if showlinks =true then set id to hidden else empty id */}
         <div className="links" id={showLinks ? "hidden" : ""}>
           <a href="/">Home</a>

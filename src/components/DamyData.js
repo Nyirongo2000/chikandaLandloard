@@ -217,7 +217,7 @@ const DamyData = () => {
       <hr />
       
       <ReactPaginate 
-        className="border flex flex-row justify-center p-2 gap-2"
+        className="flex flex-row justify-center gap-2 p-2 border"
         previousLabel={"Previous"}
         nextLabel={"Next"}
         pageCount={pageCount}
