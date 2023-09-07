@@ -14,10 +14,10 @@ function Navbar() {
           <a href="/about">About us</a>
           <a href="/blog">Blog</a>
           <a href="/contact">Contact Us</a>
-        </div>
+        </div> 
         {/* sets to the oposite of initial on click */}
         <button
-          className="px-4 py-2 font-semibold text-blue-700 bg-transparent border border-blue-500 rounded hover:bg-blue-500 hover:text-white hover:border-transparent"
+          className="px-4 py-2 font-semibold text-white bg-transparent border border-blue-500 rounded hover:bg-blue-500 hover:text-white hover:border-transparent"
           onClick={() => setShowLinks(!showLinks)}
 
         >
