@@ -215,15 +215,17 @@ const DamyData = () => {
         </div>
       </div>
       <hr />
-      
-      <ReactPaginate 
+      <ReactPaginate
         className="flex flex-row justify-center gap-2 p-2 border"
         previousLabel={"Previous"}
         nextLabel={"Next"}
         pageCount={pageCount}
         onPageChange={handlePageChange}
         containerClassName={"pagination"}
-        activeClassName={"active"}
+        activeClassName={"bg-blue-500 text-white"} // Use Tailwind classes for background color and text color
+        previousLinkClassName="border rounded-md px-3 py-2 hover:bg-gray-200"
+        nextLinkClassName="border rounded-md px-3 py-2 hover:bg-gray-200"
+        pageLinkClassName="border rounded-md px-3 py-2 hover:bg-gray-200"
       />
     </div>
   );

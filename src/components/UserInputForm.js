@@ -26,7 +26,9 @@ function UserInputForm() {
     landlordDescription: "",
     location_Name: "",
     location_Description: "",
-    StudentEmail: "",
+    studentEmail: "",
+    rentalFee: "",
+    locationType: "",
   });
 
   const handleChange = (e) => {
@@ -140,16 +142,29 @@ function UserInputForm() {
                       </div>
                     </div>
                     <div class="md:col-span-1">
-                      <label for="zipcode">Zipcode</label>
-                      <input
+                      <label>Rulal/Urban</label>
+                      <select
                         type="text"
-                        name="zipcode"
-                        id="zipcode"
+                        name="locationType"
                         class="transition-all flex items-center h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                         placeholder=""
-                        value=""
+                        value={hostel.locationType}
+                        onChange={(e) => handleChange(e)}
+                      >
+                        <option value="Urban">Urban </option>
+                        <option value="Rural">Rural </option>
+                      </select>
+                    </div>
+                    <div class="md:col-span-5">
+                      <label>Rental fee</label>
+                      <input
+                        class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                        name="rentalFee"
+                        value={hostel.rentalFee}
+                        onChange={(e) => handleChange(e)}
                       />
                     </div>
+
                     <div class="md:col-span-5">
                       <label>Location name</label>
                       <input
@@ -200,25 +215,21 @@ function UserInputForm() {
                     </div>
                     <div class="md:col-span-5">
                       <div class="inline-flex items-center">
-                        <input
-                          type="checkbox"
-                          name="billing_same"
-                          id="billing_same"
-                          class="form-checkbox"
-                        />
+                        <input type="checkbox" class="form-checkbox" />
                         <label for="billing_same" class="ml-2">
                           I agreee that all given information is true
                         </label>
                       </div>
                     </div>
                     <div class="md:col-span-5">
-                      <Input
-                        type="email"
-                        name="StudentEmail"
-                        label="Student email"
-                        pattern="^[\w\.-]+@unima\.ac\.mw$"
-                        required
-                        value={hostel.StudentEmail}
+                      <label>Student Email</label>
+                      <input
+                        type="text"
+                        name="studentEmail"
+                        // pattern="^[\w\.-]+@unima\.ac\.mw$"
+                        class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
+                        // required
+                        value={hostel.studentEmail}
                         onChange={(e) => handleChange(e)}
                       />
                     </div>
@@ -238,7 +249,7 @@ function UserInputForm() {
               </div>
             </div>
           </div>
-{/* 
+          {/* 
           <a
             href="https://www.buymeacoffee.com/dgauderman"
             target="_blank"
@@ -252,7 +263,6 @@ function UserInputForm() {
           </a> */}
         </div>
       </div>
-     
     </div>
   );
 }
