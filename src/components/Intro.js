@@ -8,7 +8,8 @@ function Intro() {
 
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
- 
+  
+  
   return (
     <div>
       <div

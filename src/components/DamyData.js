@@ -12,12 +12,18 @@ import { useEffect } from "react";
 import {
   Button,
   Tooltip,
+  Input,
 } from "@material-tailwind/react";
 
 
 const DamyData = () => {
+  
   const [loading, setLoading] = useState(true);
   const [hostells, setHostells] = useState(null);
+
+  const [search, setSearch] = React.useState("");
+  const onChangeThis = ({ target }) => setSearch(target.value);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,26 +60,38 @@ const DamyData = () => {
   // Slice the data array to display only the current page's items
   const displayedData = hostelData?.slice(startIndex, endIndex);
   return (
-    // * id: "",
-    // hostel_name: "",
-    // timeTaken: "",
-    // gender: "",
-    // description: "",
-    // rCondition: "",
-    // numberOfSingleRooms: "",
-    // numberOfDoubleRooms: "",
-    // phoneNumber: "",
-    // landlordName: "",
-    // landlordDescription: "",
-    // location_Name: "",
-    // location_Description: "",
-    // StudentEmail: "",
     <div>
+      <div className="relative  flex w-full max-w-[24rem] ">
+        <Input
+          type="text"
+          value={search}
+          onChange={onChangeThis}
+          placeholder="search..."
+          className="min-w-full pr-20 text-black bg-white rounded-md border-blue-gray-900"
+          containerProps={{
+            className: "min-w-0 ",
+          }}
+        />
+        <Button
+          size="sm"
+          color={search ? "blue" : "white"}
+          disabled={!search}
+          className="!absolute right-1 top-1 rounded"
+        >
+          search
+        </Button>
+      </div>
       <div id="makeFull">
         <div>
           {!loading && (
             <div>
-              {displayedData.map((hostel) => (
+              {displayedData
+              .filter((hostel)=>{
+                return search.toLowerCase() === ""
+                  ? hostel
+                  : hostel.locationType.toLowerCase().includes(search);
+              })
+              .map((hostel) => (
                 <div class="gallery">
                   <img src={Hostelpic} alt="Developer1" />
 

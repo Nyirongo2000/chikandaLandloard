@@ -58,7 +58,9 @@ function UserInputForm() {
           <div>
             {/* <h2 class="font-semibold text-xl text-gray-600">Hello Unima</h2>
       <p class="text-gray-500 mb-6">Enter Hostel Details.</p> */}
+            {/* <form method="post">
 
+        </form> */}
             <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
               <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                 <div class="text-gray-600">
@@ -151,8 +153,9 @@ function UserInputForm() {
                         value={hostel.locationType}
                         onChange={(e) => handleChange(e)}
                       >
-                        <option value="Urban">Urban </option>
-                        <option value="Rural">Rural </option>
+                        <option >Rural/Urban</option>
+                        <option value="urban">Urban </option>
+                        <option value="rural">Rural </option>
                       </select>
                     </div>
                     <div class="md:col-span-5">
