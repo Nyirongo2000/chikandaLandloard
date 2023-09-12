@@ -76,7 +76,7 @@ const Blog=() => {
                                </ul>
                             </div>
                             <div className='text-sm w-full bg-white m-0.5 mr-2 rounded-md'>
-                                <p>Pagination info to see more interensing articles</p> 
+                                <p>previous ...1... next</p> 
                             </div>
                     </div>
                     

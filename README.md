@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-
+  // id: "", // hostel_name: "", // timeTaken: "", //
+                      gender: "", // description: "", // rCondition: "", //
+                      numberOfSingleRooms: "", // numberOfDoubleRooms: "", //
+                      phoneNumber: "", // landlordName: "", //
+                      landlordDescription: "", // location_Name: "", //
+                      location_Description: "", // studentEmail: "", //
+                      rentalFee: "", // locationType: "",
 webflow:
 hostel catalog > popup (displays moer information about the house)
 

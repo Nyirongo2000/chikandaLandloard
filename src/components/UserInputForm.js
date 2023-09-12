@@ -15,31 +15,52 @@ function UserInputForm() {
   const [hostel, setHostel] = useState({
     id: "",
     hostel_name: "",
-    timeTaken: "",
     gender: "",
+    rentalFee: "",
+    timeTaken: "",
     description: "",
-    rCondition: "",
     numberOfSingleRooms: "",
     numberOfDoubleRooms: "",
     phoneNumber: "",
     landlordName: "",
     landlordDescription: "",
+    locationType: "",
     location_Name: "",
     location_Description: "",
     studentEmail: "",
-    rentalFee: "",
-    locationType: "",
   });
-
+    const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     const value = e.target.value;
     setHostel({ ...hostel, [e.target.name]: value });
   };
 
   const navigate = useNavigate();
+ const validateForm = () => {
+   const newErrors = {};
 
-  const saveHostel = (e) => {
-    e.preventDefault();
+   // Check required fields and set errors if empty
+   if (!hostel.hostel_name.trim()) {
+     newErrors.hostel_name = "Hostel Name is required";
+   }
+   if (!hostel.studentEmail.trim()) {
+     newErrors.studentEmail = "Student Email is required";
+   }
+
+   // Add more validations for other fields here
+
+   setErrors(newErrors);
+
+   // Return true if the form is valid, false otherwise
+   return Object.keys(newErrors).length === 0;
+ };
+
+
+const saveHostel = (e) => {
+  e.preventDefault();
+
+  if (validateForm()) {
+    // If the form is valid, proceed with saving the hostel
     LandlordService.saveHostel(hostel)
       .then((Response) => {
         console.log(Response);
@@ -48,7 +69,8 @@ function UserInputForm() {
       .catch((Error) => {
         console.log(Error);
       });
-  };
+  }
+};
 
   return (
     <div>
@@ -153,7 +175,7 @@ function UserInputForm() {
                         value={hostel.locationType}
                         onChange={(e) => handleChange(e)}
                       >
-                        <option >Rural/Urban</option>
+                        <option>Rural/Urban</option>
                         <option value="urban">Urban </option>
                         <option value="rural">Rural </option>
                       </select>
@@ -229,12 +251,20 @@ function UserInputForm() {
                       <input
                         type="text"
                         name="studentEmail"
-                        // pattern="^[\w\.-]+@unima\.ac\.mw$"
-                        class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                        // required
+                        pattern="^[\w\.-]+@unima\.ac\.mw$"
+                        class={`h-10 border mt-1 rounded px-4 w-full bg-gray-50 ${
+                          errors.studentEmail ? "border-red-500" : ""
+                        }`}
+                        required
                         value={hostel.studentEmail}
                         onChange={(e) => handleChange(e)}
+                        title={errors.studentEmail || ""}
                       />
+                      {errors.studentEmail && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.studentEmail}
+                        </p>
+                      )}
                     </div>
 
                     <div class="md:col-span-5 text-right">
