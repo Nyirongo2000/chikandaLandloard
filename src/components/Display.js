@@ -1,11 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import chartMuRoom from "../resources/chattingMuRoom.jpg"
 import rommOftwo from "../resources/Interiors929-87-6809b30109644d96ac86c2f2a25e1f29.jpg"
 import studentsInRoom from "../resources/students-in-residence-hall-room-full-scaled.jpg"
 import singleroom from "../resources/havenguestsuite-f19-20.jpg"
 import singleR from "../resources/res.jpeg"
 import { Button, Tooltip } from "@material-tailwind/react";
+import smile from "../resources/relaxedLady.jpg";
+import PopUpDetails from "./PopUpDetails";
 function Display() {
+  const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div>
       <div className="flex flex-wrap justify-center space-between">
@@ -130,6 +134,65 @@ function Display() {
                 </span>
               </Tooltip>
             </div>
+            <Button
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
+              onClick={() => setButtonPopup(true)}
+            >
+              more info
+            </Button>
+
+            <PopUpDetails trigger={buttonPopup} setTrigger={setButtonPopup}>
+              <div className=" flex flex-row m-0.5 mr-2 p-1 bg-white rounded-md shadow-md">
+                <div className="h-24">
+                  <img
+                    className="h-full bg-cover hover:rounded-md"
+                    src={studentsInRoom}
+                    alt="hostel_name"
+                  />
+                </div>
+                <div
+                  id="pdfgeeDiv"
+                  className=" flex flex-col w-full m-0.5 flex-wrap"
+                >
+                  <div className=" bg-white my-0.5 ">
+                    <h1 className="text-blue-900">hostel_name</h1>
+                  </div>
+                  <div className="bg-white h-fill">
+                    <p className="text-sm text-gray-600">hostel description</p>
+                    <div className="flex h-full my-1 bg-white flex-rol">
+                      <p className="ml-1 text-sm text-gray-600">
+                        Single- hostel numberOfSingleRooms
+                        <br />
+                        Double- hostel numberOfDoubleRooms
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        <h2>hostel location_Name</h2>
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        hostel location_Description
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        ..hostel studentEmail..
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600 bg-slate-200">
+                        hostel phoneNumber
+                        <Button className="text-sm text-white bg-blue-200 hover:bg-blue-400 p-0.5 m-0.5 rounded-md">
+                          Copy #
+                        </Button>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-row flex-wrap">
+                    <Button className="text-sm text-white bg-blue-300 hover:bg-blue-900 p-0.5 m-0.5 rounded-md">
+                      Copy
+                    </Button>
+                    <Button className="text-sm text-white bg-blue-400 hover:bg-blue-600 p-0.5 m-0.5 rounded-md">
+                      Preview
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </PopUpDetails>
           </div>
         </div>
         {/* 2 */}
@@ -237,6 +300,65 @@ function Display() {
                 </span>
               </Tooltip>
             </div>
+            <Button
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
+              onClick={() => setButtonPopup(true)}
+            >
+              more info
+            </Button>
+
+            <PopUpDetails trigger={buttonPopup} setTrigger={setButtonPopup}>
+              <div className=" flex flex-row m-0.5 mr-2 p-1 bg-white rounded-md shadow-md">
+                <div className="h-24">
+                  <img
+                    className="h-full bg-cover hover:rounded-md"
+                    src={studentsInRoom}
+                    alt="hostel_name"
+                  />
+                </div>
+                <div
+                  id="pdfgeeDiv"
+                  className=" flex flex-col w-full m-0.5 flex-wrap"
+                >
+                  <div className=" bg-white my-0.5 ">
+                    <h1 className="text-blue-900">hostel_name</h1>
+                  </div>
+                  <div className="bg-white h-fill">
+                    <p className="text-sm text-gray-600">hostel description</p>
+                    <div className="flex h-full my-1 bg-white flex-rol">
+                      <p className="ml-1 text-sm text-gray-600">
+                        Single- hostel numberOfSingleRooms
+                        <br />
+                        Double- hostel numberOfDoubleRooms
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        <h2>hostel location_Name</h2>
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        hostel location_Description
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        ..hostel studentEmail..
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600 bg-slate-200">
+                        hostel phoneNumber
+                        <Button className="text-sm text-white bg-blue-200 hover:bg-blue-400 p-0.5 m-0.5 rounded-md">
+                          Copy #
+                        </Button>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-row flex-wrap">
+                    <Button className="text-sm text-white bg-blue-300 hover:bg-blue-900 p-0.5 m-0.5 rounded-md">
+                      Copy
+                    </Button>
+                    <Button className="text-sm text-white bg-blue-400 hover:bg-blue-600 p-0.5 m-0.5 rounded-md">
+                      Preview
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </PopUpDetails>
           </div>
         </div>
         {/* three */}
@@ -365,6 +487,65 @@ function Display() {
                 </span>
               </Tooltip>
             </div>
+            <Button
+              className="p-1 m-2 font-bold text-white bg-blue-300 rounded hover:bg-blue-700"
+              onClick={() => setButtonPopup(true)}
+            >
+              more info
+            </Button>
+
+            <PopUpDetails trigger={buttonPopup} setTrigger={setButtonPopup}>
+              <div className=" flex flex-row m-0.5 mr-2 p-1 bg-white rounded-md shadow-md">
+                <div className="h-24">
+                  <img
+                    className="h-full bg-cover hover:rounded-md"
+                    src={studentsInRoom}
+                    alt="hostel_name"
+                  />
+                </div>
+                <div
+                  id="pdfgeeDiv"
+                  className=" flex flex-col w-full m-0.5 flex-wrap"
+                >
+                  <div className=" bg-white my-0.5 ">
+                    <h1 className="text-blue-900">hostel_name</h1>
+                  </div>
+                  <div className="bg-white h-fill">
+                    <p className="text-sm text-gray-600">hostel description</p>
+                    <div className="flex h-full my-1 bg-white flex-rol">
+                      <p className="ml-1 text-sm text-gray-600">
+                        Single- hostel numberOfSingleRooms
+                        <br />
+                        Double- hostel numberOfDoubleRooms
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        <h2>hostel location_Name</h2>
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        hostel location_Description
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600">
+                        ..hostel studentEmail..
+                      </p>
+                      <p className="ml-1 text-sm text-gray-600 bg-slate-200">
+                        hostel phoneNumber
+                        <Button className="text-sm text-white bg-blue-200 hover:bg-blue-400 p-0.5 m-0.5 rounded-md">
+                          Copy #
+                        </Button>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-row flex-wrap">
+                    <Button className="text-sm text-white bg-blue-300 hover:bg-blue-900 p-0.5 m-0.5 rounded-md">
+                      Copy
+                    </Button>
+                    <Button className="text-sm text-white bg-blue-400 hover:bg-blue-600 p-0.5 m-0.5 rounded-md">
+                      Preview
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </PopUpDetails>
           </div>
         </div>
       </div>

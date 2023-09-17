@@ -15,15 +15,10 @@ import {
   Input,
 } from "@material-tailwind/react";
 
-
 const DamyData = () => {
-  
   const [loading, setLoading] = useState(true);
   const [hostells, setHostells] = useState(null);
-
   const [search, setSearch] = React.useState("");
-  const onChangeThis = ({ target }) => setSearch(target.value);
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,21 +27,23 @@ const DamyData = () => {
         const response = await LandlordService.getHostels();
         setHostells(response.data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
+        setHostells([]); // Set hostells to an empty array when an error occurs
       }
       setLoading(false);
     };
     fetchData();
   }, []);
-  
+
   const [buttonPopup, setButtonPopup] = useState(false);
 
   // Pagination state
-  const hostelData =hostells;
+  const hostelData = hostells || []; // Use an empty array as a fallback
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10; // Number of items to display per page
+
   // Calculate the total number of pages
-  const pageCount = Math.ceil(hostelData?.length / itemsPerPage);
+  const pageCount = Math.ceil(hostelData.length / itemsPerPage);
 
   // Function to handle page change
   const handlePageChange = ({ selected }) => {
@@ -58,7 +55,8 @@ const DamyData = () => {
   const endIndex = startIndex + itemsPerPage;
 
   // Slice the data array to display only the current page's items
-  const displayedData = hostelData?.slice(startIndex, endIndex);
+  // const displayedData = hostelData?.slice(startIndex, endIndex);
+   const displayedData = hostelData.slice(startIndex, endIndex);
   return (
     <div>
       <div className="relative  flex w-full max-w-[24rem] ">
@@ -73,7 +71,6 @@ const DamyData = () => {
           }}
         />
         <Button
-          // onClick={(e) => setSearch(e.target.value)}
           size="sm"
           color={search ? "blue" : "white"}
           disabled={!search}
@@ -90,12 +87,14 @@ const DamyData = () => {
                 .filter((hostel) => {
                   const searchTerm = search.trim().toLowerCase();
 
-                  // Check if the search term exists in any of the fields
-                  return Object.values(hostel)
-                    .map((value) => value.toString().toLowerCase())
-                    .some((field) => field.includes(searchTerm));
+                  // Check if the hostel object exists before accessing its properties
+                  return (
+                    hostel &&
+                    Object.values(hostel)
+                      .map((value) => value.toString().toLowerCase())
+                      .some((field) => field.includes(searchTerm))
+                  );
                 })
-
                 .map((hostel) => (
                   <div class="gallery">
                     <img src={Hostelpic} alt="Developer1" />
@@ -225,7 +224,7 @@ const DamyData = () => {
                             </div>
                             <div className="flex flex-row flex-wrap">
                               <Button className="text-sm text-white bg-blue-300 hover:bg-blue-900 p-0.5 m-0.5 rounded-md">
-                                Copy 
+                                Copy
                               </Button>
                               <Button className="text-sm text-white bg-blue-400 hover:bg-blue-600 p-0.5 m-0.5 rounded-md">
                                 Preview
@@ -237,6 +236,8 @@ const DamyData = () => {
                     </div>
                   </div>
                 ))}
+              {/* Handle empty data */}
+              {hostelData.length === 0 && <p>No hostels found.</p>}
             </div>
           )}
         </div>
@@ -249,7 +250,7 @@ const DamyData = () => {
         pageCount={pageCount}
         onPageChange={handlePageChange}
         containerClassName={"pagination"}
-        activeClassName={"bg-blue-500 text-white"} // Use Tailwind classes for background color and text color
+        activeClassName={"bg-blue-500 text-white"}
         previousLinkClassName="border rounded-md px-3 py-2 hover:bg-gray-200"
         nextLinkClassName="border rounded-md px-3 py-2 hover:bg-gray-200"
         pageLinkClassName="border rounded-md px-3 py-2 hover:bg-gray-200"
