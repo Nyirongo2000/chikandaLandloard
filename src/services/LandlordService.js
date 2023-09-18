@@ -1,6 +1,7 @@
 import axios from "axios";
-const LANDLORD_API_BASE_URL = "http://localhost:8080/api/landlord";
-
+// const LANDLORD_API_BASE_URL = "http://localhost:8080/api/landlord";
+const LANDLORD_API_BASE_URL =
+  "https://hostel-ih59.onrender.com/api/landlord";
 
 class LandlordService {
   // lets start with hostels
