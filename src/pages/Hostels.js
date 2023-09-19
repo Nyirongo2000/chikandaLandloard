@@ -30,7 +30,7 @@ function Hostels() {
         <div className="h-auto bg-white-700">
           
           <DamyData/>
-          <p>hello</p>
+          {/* <p>hello</p> */}
         </div>
       </div>
     </div>

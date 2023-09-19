@@ -1,15 +1,13 @@
 import React from "react";
 import "./intro.css";
-import girlImage from "../resources/someGirl.jpg"
+import girlImage from "../resources/someGirl.jpg";
 import { Input, Button } from "@material-tailwind/react";
 import Display from "./Display";
- 
-function Intro() {
 
+function Intro() {
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
-  
-  
+
   return (
     <div>
       <div
@@ -17,7 +15,7 @@ function Intro() {
         className="flex flex-col items-center justify-between h-full"
       >
         <div className="flex flex-col items-center h-auto mt-12">
-          <div className="text-4xl text-white h-9"> Hello World</div>
+          <div className="text-4xl text-white h-9"> Hello UNIMA</div>
           <div className="flex flex-row justify-center flex-auto">
             <a href="/hostel">
               {" "}
