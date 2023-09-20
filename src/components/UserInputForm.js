@@ -29,48 +29,48 @@ function UserInputForm() {
     location_Description: "",
     studentEmail: "",
   });
-    const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     const value = e.target.value;
     setHostel({ ...hostel, [e.target.name]: value });
   };
 
   const navigate = useNavigate();
- const validateForm = () => {
-   const newErrors = {};
+  const validateForm = () => {
+    const newErrors = {};
 
-   // Check required fields and set errors if empty
-   if (!hostel.hostel_name.trim()) {
-     newErrors.hostel_name = "Hostel Name is required";
-   }
-   if (!hostel.studentEmail.trim()) {
-     newErrors.studentEmail = "Student Email is required";
-   }
+    // Check required fields and set errors if empty
+    if (!hostel.hostel_name.trim()) {
+      newErrors.hostel_name = "Hostel Name is required";
+    }
+    if (!hostel.studentEmail.trim()) {
+      newErrors.studentEmail = "Student Email is required";
+    }
 
-   // Add more validations for other fields here
+    // Add more validations for other fields here
 
-   setErrors(newErrors);
+    setErrors(newErrors);
 
-   // Return true if the form is valid, false otherwise
-   return Object.keys(newErrors).length === 0;
- };
+    // Return true if the form is valid, false otherwise
+    return Object.keys(newErrors).length === 0;
+  };
 
+  const saveHostel = (e) => {
+    e.preventDefault();
 
-const saveHostel = (e) => {
-  e.preventDefault();
-
-  if (validateForm()) {
-    // If the form is valid, proceed with saving the hostel
-    LandlordService.saveHostel(hostel)
-      .then((Response) => {
-        console.log(Response);
-        navigate("/");
-      })
-      .catch((Error) => {
-        console.log(Error);
-      });
-  }
-};
+    if (validateForm()) {
+      // If the form is valid, proceed with saving the hostel
+      LandlordService.saveHostel(hostel)
+        .then((Response) => {
+          console.log(Response);
+          // add a popup that its done
+          navigate("/");
+        })
+        .catch((Error) => {
+          console.log(Error);
+        });
+    }
+  };
 
   return (
     <div>
@@ -282,18 +282,6 @@ const saveHostel = (e) => {
               </div>
             </div>
           </div>
-          {/* 
-          <a
-            href="https://www.buymeacoffee.com/dgauderman"
-            target="_blank"
-            class="md:absolute bottom-0 right-0 p-4 float-right"
-          >
-            <img
-              src="https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-3.svg"
-              alt="Buy Me A Coffee"
-              class="transition-all rounded-full w-14 -rotate-45 hover:shadow-sm shadow-lg ring hover:ring-4 ring-white"
-            />
-          </a> */}
         </div>
       </div>
     </div>
